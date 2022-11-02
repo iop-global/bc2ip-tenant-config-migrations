@@ -7,3 +7,4 @@ An easy-to-use white-label blockchain application for enterprises, innovators an
 ## Config Migrations
 
 This repository contains migration scripts for tenant installations.
+
