@@ -19,10 +19,10 @@ fi
 
 echo -e "${GREEN}[$PREFIX]:${NC} current config version '${currentVersion}'"
 
-for f in $(ls -v ./migration/scripts/*.sh)
+for f in $(ls -v ./bc2ip-tenant-config-migrations/scripts/*.sh)
 do
     upComingVersion=${f/\.sh/""}
-    upComingVersion=${upComingVersion/"./migration/scripts/"/""}
+    upComingVersion=${upComingVersion/"./bc2ip-tenant-config-migrations/scripts/"/""}
     if (( "$upComingVersion" <= "$currentVersion" )); then
         echo -e "${GREEN}[$PREFIX]:${NC} $f: already run, skipping"
         continue
