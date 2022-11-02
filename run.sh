@@ -24,7 +24,7 @@ do
     upComingVersion=${f/\.sh/""}
     upComingVersion=${upComingVersion/"./bc2ip-tenant-config-migrations/scripts/"/""}
     if (( "$upComingVersion" <= "$currentVersion" )); then
-        echo -e "${GREEN}[$PREFIX]:${NC} $f: already run, skipping"
+        echo -e "${GREEN}[$PREFIX]:${NC} $f: already ran, skipping"
         continue
     fi
     echo -e "${GREEN}[$PREFIX]:${NC} $f: running..."
