@@ -19,16 +19,16 @@ fi
 
 echo -e "${GREEN}[$PREFIX]:${NC} current config version '${currentVersion}'"
 
-for f in $(ls -v ./bc2ip-tenant-config-migrations/scripts/*.sh)
+for f in $(ls -v ./bc2ip-tenant-config-migrations/scripts/*.py)
 do
-    upComingVersion=${f/\.sh/""}
+    upComingVersion=${f/\.py/""}
     upComingVersion=${upComingVersion/"./bc2ip-tenant-config-migrations/scripts/"/""}
     if (( "$upComingVersion" <= "$currentVersion" )); then
         echo -e "${GREEN}[$PREFIX]:${NC} $f: already ran, skipping"
         continue
     fi
     echo -e "${GREEN}[$PREFIX]:${NC} $f: running..."
-    /bin/bash $f
+    python3 $f
     echo $upComingVersion>version
     echo -e "${GREEN}[$PREFIX]:${NC} $f: - OK"
 done
