@@ -22,3 +22,27 @@ Initializes the congiration migrations environment. Creates a `version` file wit
   - Replaces `{{encryptedFilesPath}}:/root/app/data` to `'{{encryptedFilesPath}}:/root/app/data'`.
 - Adds a new entry in `docker-compose.yml.tpl` to `.services.backend.volumes`: `./config/backend/email_templates:/root/app/dist/modules/mail/templates`.
 - Bumps `version` file to `2`. 
+
+### 3.py
+
+- Fixes some properties in `config/backend/config.json.tpl` as those were expected to be handled as booleans, but were strings:
+  - `"rejectUnauthorized": "{{mailingRejectUnauthorized}}",` -> `"rejectUnauthorized": {{mailingRejectUnauthorized}},`
+  - `"secure": "{{mailingTls}}",` -> `"secure": {{mailingTls}},`
+
+## Tests
+
+### Requirements
+
+- Python 3 PIP
+
+### Usage
+
+Run these commands in the `tests`.
+
+```bash
+$ pip3 install -r requirements.txt
+```
+
+```bash
+$ python3 -m unittest
+```

@@ -1,0 +1,17 @@
+stages:
+  - tests
+
+tests:
+  stage: tests
+  image: python:3.10-slim-bullseye
+  except:
+    - tags
+  before_script:
+    - cd tests
+    - pip3 install --upgrade pip
+    - pip3 install -r requirements.txt
+  script:
+    - python3 -m unittest
+  cache:
+    paths:
+      - tests/__pycache__

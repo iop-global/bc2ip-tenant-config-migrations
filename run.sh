@@ -28,7 +28,7 @@ do
         continue
     fi
     echo -e "${GREEN}[$PREFIX]:${NC} $f: running..."
-    python3 $f
+    python3 $f $(pwd)
     echo $upComingVersion>version
     echo -e "${GREEN}[$PREFIX]:${NC} $f: - OK"
 done
