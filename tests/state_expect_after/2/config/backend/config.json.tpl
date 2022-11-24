@@ -1,5 +1,5 @@
 {
-  "mode": "prod",
+  "mode": "development",
   "auth": {
     "admins": {{adminEmails}},
     "encryptionKey": "a_key",

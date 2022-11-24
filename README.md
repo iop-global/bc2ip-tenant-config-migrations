@@ -29,6 +29,11 @@ Initializes the congiration migrations environment. Creates a `version` file wit
   - `"rejectUnauthorized": "{{mailingRejectUnauthorized}}",` -> `"rejectUnauthorized": {{mailingRejectUnauthorized}},`
   - `"secure": "{{mailingTls}}",` -> `"secure": {{mailingTls}},`
 
+### 4.py
+
+- Switces backend service's mode from `development` to `prod`.
+- Adds `"apiPath": "/api"` to `config/backend/config.json.tpl`.
+
 ## Tests
 
 ### Requirements

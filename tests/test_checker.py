@@ -37,3 +37,19 @@ class TestChecker3(core_test.CoreTest):
 
             file.close()
             self.handle_inspection_errors(2, errors)
+
+class TestChecker4(core_test.CoreTest):
+    def inspect(self):
+        with open(f"{self.abs_working_dir()}/config/backend/config.json.tpl", 'r') as file:
+            expectedReplacement1 = '"mode": "prod,"'
+            expectedReplacement2 = '"apiPath": "/api",'
+            filedata = file.read()
+            errors = []
+            
+            if not expectedReplacement1 in filedata:
+                errors.append(f"{expectedReplacement1} was not replaced")
+            if not expectedReplacement2 in filedata:
+                errors.append(f"{expectedReplacement2} was not replaced")
+
+            file.close()
+            self.handle_inspection_errors(2, errors)

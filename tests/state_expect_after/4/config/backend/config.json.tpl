@@ -1,5 +1,6 @@
 {
-  "mode": "development",
+  "mode": "prod",
+  "apiPath": "/api",
   "auth": {
     "admins": {{adminEmails}},
     "encryptionKey": "a_key",
@@ -22,14 +23,14 @@
   "mailer": {
     "transport": {
       "host": "{{mailingHost}}",
-      "secure": "{{mailingTls}}",
+      "secure": {{mailingTls}},
       "port": "{{mailingPort}}",
       "auth": {
         "user": "{{mailingUser}}",
         "pass": "{{mailingPassword}}"
       },
       "tls": {
-        "rejectUnauthorized": "{{mailingRejectUnauthorized}}"
+        "rejectUnauthorized": {{mailingRejectUnauthorized}}
       }
     },
     "defaults": {
