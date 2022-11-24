@@ -4,10 +4,16 @@
   "auth": {
     "admins": {{adminEmails}},
     "encryptionKey": "a_key",
-    "jwt": {
+    "accessToken": {
       "secret": "a_secret",
       "signOptions": {
         "expiresIn": "10m"
+      }
+    },
+    "refreshToken": {
+      "secret": "a_secret",
+      "signOptions": {
+        "expiresIn": "60m"
       }
     },
     "magicLink": {

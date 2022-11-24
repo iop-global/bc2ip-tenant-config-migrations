@@ -41,8 +41,10 @@ class TestChecker3(core_test.CoreTest):
 class TestChecker4(core_test.CoreTest):
     def inspect(self):
         with open(f"{self.abs_working_dir()}/config/backend/config.json.tpl", 'r') as file:
-            expectedReplacement1 = '"mode": "prod,"'
+            expectedReplacement1 = '"mode": "prod",'
             expectedReplacement2 = '"apiPath": "/api",'
+            accessToken = '"accessToken"'
+            refreshToken = '"refreshToken"'
             filedata = file.read()
             errors = []
             
@@ -50,6 +52,12 @@ class TestChecker4(core_test.CoreTest):
                 errors.append(f"{expectedReplacement1} was not replaced")
             if not expectedReplacement2 in filedata:
                 errors.append(f"{expectedReplacement2} was not replaced")
+            if not accessToken in filedata:
+                errors.append("accessToken was not added")
+            if not refreshToken in filedata:
+                errors.append("refreshToken was not added")
+            if "jwt" in filedata:
+                errors.append("jwt was not removed")
 
             file.close()
             self.handle_inspection_errors(2, errors)

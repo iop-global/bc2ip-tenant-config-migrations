@@ -33,6 +33,8 @@ Initializes the congiration migrations environment. Creates a `version` file wit
 
 - Switces backend service's mode from `development` to `prod`.
 - Adds `"apiPath": "/api"` to `config/backend/config.json.tpl`.
+- Adds `auth.refreshToken` to `config/backend/config.json.tpl`.
+- Renames `auth.jwt` to `auth.accessToken` in `config/backend/config.json.tpl`.
 
 ## Tests
 
