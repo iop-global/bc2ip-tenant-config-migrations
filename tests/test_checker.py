@@ -36,7 +36,7 @@ class TestChecker3(core_test.CoreTest):
                 errors.append(f"{expectedReplacement2} was not replaced")
 
             file.close()
-            self.handle_inspection_errors(2, errors)
+            self.handle_inspection_errors(3, errors)
 
 class TestChecker4(core_test.CoreTest):
     def inspect(self):
@@ -60,4 +60,15 @@ class TestChecker4(core_test.CoreTest):
                 errors.append("jwt was not removed")
 
             file.close()
-            self.handle_inspection_errors(2, errors)
+            self.handle_inspection_errors(4, errors)
+
+
+class TestChecker5(core_test.CoreTest):
+    def inspect(self) :
+        errors = []       
+        templates = ["invitation.hbs","magic-link.hbs","project-file-added.hbs","project-file-deleted.hbs","project-version-sealed.hbs"]
+        for template in templates:
+            if not os.path.exists(f"{self.WORKING_DIR}/config/backend/email_templates/{template}"):
+                errors.append(f"{template} email template was not copied")
+
+        self.handle_inspection_errors(5, errors)

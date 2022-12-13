@@ -31,10 +31,15 @@ Initializes the congiration migrations environment. Creates a `version` file wit
 
 ### 4.py
 
-- Switces backend service's mode from `development` to `prod`.
+- Switches backend service's mode from `development` to `prod`.
 - Adds `"apiPath": "/api"` to `config/backend/config.json.tpl`.
 - Adds `auth.refreshToken` to `config/backend/config.json.tpl`.
 - Renames `auth.jwt` to `auth.accessToken` in `config/backend/config.json.tpl`.
+
+### 5.py
+
+- Updates default authentication email templates to include magic link expiratation date
+- Adds default project change email templates
 
 ## Tests
 

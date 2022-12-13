@@ -3,7 +3,7 @@ import core_test
 from checksumdir import dirhash
 import test_checker
 
-version = 4
+version = 5
 
 class TestRunner(core_test.CoreTest):
     def test_it_does_nothing(self):
@@ -15,7 +15,7 @@ class TestRunner(core_test.CoreTest):
                 self.run_script(idx)
                 state_01 = dirhash(f"state_expect_after/{idx}")
                 after = dirhash(self.WORKING_DIR)
-                self.assertEqual(state_01, after);
+                self.assertEqual(state_01, after)
 
         except Exception as e:
             found_checker = True
