@@ -72,3 +72,13 @@ class TestChecker5(core_test.CoreTest):
                 errors.append(f"{template} email template was not copied")
 
         self.handle_inspection_errors(5, errors)
+
+class TestChecker6(core_test.CoreTest):
+    def inspect(self) :
+        errors = []       
+        templates = ["added-to-client.hbs", "device-added.hbs", "device-removed.hbs", "project-membership-changed.hbs", "removed-from-client.hbs"]
+        for template in templates:
+            if not os.path.exists(f"{self.WORKING_DIR}/config/backend/email_templates/{template}"):
+                errors.append(f"{template} email template was not copied")
+
+        self.handle_inspection_errors(6, errors)

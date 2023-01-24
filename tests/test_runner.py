@@ -3,7 +3,7 @@ import core_test
 from checksumdir import dirhash
 import test_checker
 
-version = 5
+version = 6
 
 class TestRunner(core_test.CoreTest):
     def test_it_does_nothing(self):
