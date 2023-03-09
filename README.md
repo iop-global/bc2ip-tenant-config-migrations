@@ -41,6 +41,15 @@ Initializes the congiration migrations environment. Creates a `version` file wit
 - Updates default authentication email templates to include magic link expiratation date
 - Adds default project change email templates
 
+### 6.py
+
+- Adds new notification email templates:
+  - User added to client: `added-to-client.hbs`
+  - User removed from client: `removed-from-client.hbs`
+  - Device added: `device-added.hbs`
+  - Devire removed: `device-removed.hbs`
+  - Project membership changed: `project-membership-changed.hbs`
+
 ## Tests
 
 ### Requirements
