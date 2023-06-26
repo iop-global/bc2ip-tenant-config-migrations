@@ -50,6 +50,10 @@ Initializes the congiration migrations environment. Creates a `version` file wit
   - Devire removed: `device-removed.hbs`
   - Project membership changed: `project-membership-changed.hbs`
 
+### 7.py
+
+- Use new registry for the new version of tools.
+
 ## Tests
 
 ### Requirements

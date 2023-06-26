@@ -1,0 +1,78 @@
+{
+  "tenantName": {
+    "description": "This will be used for prefixing Docker containers. Cannot be empty.",
+    "example": "AWESOME_GMBH",
+    "value": ""
+  },
+  "appBaseUrl": {
+    "description": "BC2IP Core Application's URL. This URL must consider ports.webapp! Cannot be empty.",
+    "example": "https://bc2ip.awesome-gmbh.de",
+    "value": ""
+  },
+  "toolsBaseUrl": {
+    "description": "BC2IP Tools Application's URL. This URL must consider ports.tools! Cannot be empty.",
+    "example": "https://tools.bc2ip.awesome-gmbh.de",
+    "value": ""
+  },
+  "ports": {
+    "webapp": {
+      "description": "BC2IP Core Application's port. This port will be expoxed locally, so you can route appBaseUrl to this port. Cannot be empty.",
+      "example": "8080",
+      "value": 8080
+    },
+    "tools": {
+      "description": "BC2IP Tools Application's port. This port will be expoxed locally, so you can route toolsBaseUrl to this port. Cannot be empty.",
+      "example": "8082",
+      "value": 8082
+    }
+  },
+  "backupLocations": {
+    "databaseDataPath": {
+      "description": "The path existing on the host, where all the database (PostgreSQL) files will be mounted by Docker. Leave empty if you need no mounting.",
+      "example": "/mnt/backups/db",
+      "value": ""
+    },
+    "encryptedFilesPath": {
+      "description": "The path existing on the host, where all encrypted files were uploaded to the app will be mounted by Docker. Leave empty if you need no mounting.",
+      "example": "/mnt/backups/files",
+      "value": ""
+    }
+  },
+  "mailing": {
+    "host": {
+      "description": "Your SMTP server's host.",
+      "example": "smtp.gmail.com",
+      "value": ""
+    },
+    "port": {
+      "description": "Your SMTP server's port.",
+      "example": "465",
+      "value": ""
+    },
+    "secure": {
+      "description": "Is your connection secure?",
+      "example": "true",
+      "value": true
+    },
+    "rejectUnauthorizedTls": {
+      "description": "Should unauthorized TLS connections be rejected?",
+      "example": "true",
+      "value": true
+    },
+    "smtpUser": {
+      "description": "Your SMTP user.",
+      "example": "smtp_user",
+      "value": ""
+    },
+    "smtpPassword": {
+      "description": "Your SMTP password.",
+      "example": "very_secure_password",
+      "value": ""
+    },
+    "from": {
+      "description": "The email's default from address.",
+      "example": "noreply@bc2ip.awesome-gmbh.de",
+      "value": ""
+    }
+  }
+}

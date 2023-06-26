@@ -82,3 +82,16 @@ class TestChecker6(core_test.CoreTest):
                 errors.append(f"{template} email template was not copied")
 
         self.handle_inspection_errors(6, errors)
+
+class TestChecker7(core_test.CoreTest):
+    def inspect(self) :
+        with open(f"{self.abs_working_dir()}/docker-compose.yml.tpl", 'r') as file:
+            expectedReplacement = "europe-west3-docker.pkg.dev/iop-tresor/tresor-tools/pwa:latest"
+            filedata = file.read()
+            errors = []
+            
+            if not expectedReplacement in filedata:
+                errors.append(f"{expectedReplacement} was not replaced")
+
+            file.close()
+            self.handle_inspection_errors(7, errors)
